@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cursonelio.spring.entities.Category;
-import com.cursonelio.spring.entities.User;
 import com.cursonelio.spring.repositories.CategoryRepository;
 
 

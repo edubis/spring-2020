@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cursonelio.spring.entities.Order;
-import com.cursonelio.spring.entities.User;
 import com.cursonelio.spring.services.OrderService;
 
 @RestController

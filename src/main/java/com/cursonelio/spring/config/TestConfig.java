@@ -10,10 +10,12 @@ import org.springframework.context.annotation.Profile;
 
 import com.cursonelio.spring.entities.Category;
 import com.cursonelio.spring.entities.Order;
+import com.cursonelio.spring.entities.Product;
 import com.cursonelio.spring.entities.User;
 import com.cursonelio.spring.entities.enums.OrderStatus;
 import com.cursonelio.spring.repositories.CategoryRepository;
 import com.cursonelio.spring.repositories.OrderRepository;
+import com.cursonelio.spring.repositories.ProductRepository;
 import com.cursonelio.spring.repositories.UserRepository;
 
 @Configuration
@@ -28,6 +30,9 @@ public class TestConfig implements CommandLineRunner {
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 	
 	
 	@Override
@@ -46,9 +51,16 @@ public class TestConfig implements CommandLineRunner {
 		Category cat2 = new Category(null, "Livros");
 		Category cat3 = new Category(null, "Domésticos");
 		
+		Product p1 = new Product(null, "Computador", "Core i5 9400f", 3800.00 , "");
+		Product p2 = new Product(null, "Computador", "Core i9 9900x", 5800.00 , "");
+		Product p3 = new Product(null, "Senhor dos anéis", "As duas torres", 70.00 , "");
+		Product p4 = new Product(null, "Percy Jackson", "Ladrão de Raios", 50.00 , "");
+		Product p5 = new Product(null, "Tapete", "Tapete de chão", 80.00, "");
+		
 		
 		userRepository.saveAll(Arrays.asList(u1, u2));
 		orderRepository.saveAll(Arrays.asList(o1, o2, o3));
 		categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
+		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
 	}	
 }
