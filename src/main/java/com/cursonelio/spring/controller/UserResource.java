@@ -1,4 +1,4 @@
-package com.cursonelio.spring.resources;
+package com.cursonelio.spring.controller;
 
 import java.util.List;
 
@@ -9,29 +9,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cursonelio.spring.entities.Order;
 import com.cursonelio.spring.entities.User;
-import com.cursonelio.spring.services.OrderService;
+import com.cursonelio.spring.services.UserService;
 
 @RestController
-@RequestMapping(value="/orders")
+@RequestMapping(value="/users")
 
-public class OrderResource {
+public class UserResource {
 
 	@Autowired
-	private OrderService service;
+	private UserService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Order>> findAll(){
+	public ResponseEntity<List<User>> findAll(){
 		
-		List<Order> list = service.findAll();
+		List<User> list = service.findAll();
 		
 		return ResponseEntity.ok().body(list);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Order> findById(@PathVariable Long id){
-		Order obj = service.findById(id);
+	public ResponseEntity<User> findById(@PathVariable Long id){
+		User obj = service.findById(id);
 		return ResponseEntity.ok(obj);
 	} 
 	
